@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -19,9 +19,12 @@
             --main-glow: rgba(0, 171, 240, 0.55);
             --text: #ededed;
             --muted: #b4c3cf;
+            --font-head: 'Sora', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; border: none; outline: none; text-decoration: none; scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-body); border: none; outline: none; text-decoration: none; scroll-behavior: smooth; }
         html { font-size: 62.5%; overflow-x: hidden; scroll-padding-top: 8rem; }
         body { background: var(--bg); color: var(--text); overflow-x: hidden; }
 
@@ -211,7 +214,7 @@
 
         /* ---------- Extras: typography & hero ---------- */
         .home-content h1 i {
-            display: inline-block; padding: 0 1rem .4rem 0; font-style: italic; background: linear-gradient(90deg, #fff 10%, var(--main) 75%);
+            display: inline-block; padding: 0 1rem .4rem 0; font-style: normal; background: linear-gradient(90deg, #fff 10%, var(--main) 75%);
             -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         .heading::after {
@@ -266,6 +269,70 @@
             .timeline .skill-card::after { left: -3.7rem; }
             .timeline::before { left: .6rem; }
         }
+
+        /* ---------- Typography ---------- */
+        body { font-size: 1.6rem; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+        h1, h2, h3, .logo, .stat b, .heading { font-family: var(--font-head); letter-spacing: -.02em; }
+        .home-content h1 { letter-spacing: -.035em; }
+        .home-content p, .about-content > p, .skill-card p, .about-list li, .contact-card p, .contact-card a { line-height: 1.85; }
+        .navbar a { font-weight: 500; letter-spacing: .01em; }
+        .btn { font-family: var(--font-head); font-weight: 600; letter-spacing: .02em; font-size: 1.5rem; }
+        .skill-card h3, .contact-card h3 { font-weight: 600; letter-spacing: -.01em; }
+        .skill-card h4 { font-weight: 600; }
+        .skill-card .meta, .chips span, .badge, .stat span, .multiple-text { font-family: var(--font-mono); }
+        .skill-card .meta { font-size: 1.25rem; letter-spacing: .01em; }
+        .chips span, .badge { font-size: 1.15rem; letter-spacing: .02em; }
+        .stat span { letter-spacing: .08em; font-size: 1.1rem; }
+        .multiple-text { font-weight: 500; font-size: .85em; }
+
+        /* ---------- Designer link + popup ---------- */
+        .designer-link {
+            background: none; color: var(--main); font: inherit; font-weight: 600; cursor: pointer;
+            border-bottom: .15rem dashed var(--main); padding: 0 .1rem; transition: .3s;
+        }
+        .designer-link:hover { color: #fff; border-bottom-style: solid; text-shadow: 0 0 1rem var(--main-glow); }
+
+        .modal {
+            position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; padding: 2rem;
+            background: rgba(3, 12, 20, .72); backdrop-filter: blur(6px);
+            opacity: 0; visibility: hidden; transition: .35s;
+        }
+        .modal.open { opacity: 1; visibility: visible; }
+        .modal-card {
+            position: relative; width: 100%; max-width: 42rem; max-height: 92vh; overflow-y: auto;
+            background: var(--card); border: .1rem solid rgba(0,171,240,.35); border-radius: 2.4rem;
+            box-shadow: 0 2rem 6rem rgba(0,0,0,.6), 0 0 4rem rgba(0,171,240,.2);
+            transform: translateY(3rem) scale(.95); transition: .4s cubic-bezier(.2,.8,.2,1);
+            scrollbar-width: thin; scrollbar-color: var(--main) transparent;
+        }
+        .modal.open .modal-card { transform: none; }
+        .modal-photo {
+            position: relative; height: 22rem; overflow: hidden; display: grid; place-items: center;
+            background: linear-gradient(145deg, #123550, var(--bg));
+        }
+        .modal-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 55%, var(--card)); }
+        .modal-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .modal-photo .initials { display: none; font: 800 8rem var(--font-head); color: var(--main); text-shadow: 0 0 2rem var(--main-glow); }
+        .modal-close {
+            position: absolute; top: 1.4rem; right: 1.4rem; z-index: 3; width: 4rem; height: 4rem; border-radius: 50%;
+            display: grid; place-items: center; font-size: 1.8rem; color: var(--text); cursor: pointer;
+            background: rgba(8,27,41,.7); backdrop-filter: blur(4px); transition: .3s;
+        }
+        .modal-close:hover { background: var(--main); color: var(--bg); transform: rotate(90deg); }
+        .modal-body { padding: 1.4rem 2.8rem 3rem; }
+        .modal-body h3 { font-size: 2.6rem; font-weight: 700; }
+        .modal-role { font-family: var(--font-mono); font-size: 1.25rem; color: var(--main); margin: .5rem 0 1.6rem; }
+        .modal-body p { font-size: 1.5rem; line-height: 1.85; color: var(--muted); }
+        .modal-body h5 { font-size: 1.4rem; font-weight: 600; color: var(--text); margin: 2.2rem 0 1.2rem; }
+        .modal-social { display: flex; gap: 1.2rem; }
+        .modal-social a {
+            width: 4.6rem; height: 4.6rem; border-radius: 50%; display: grid; place-items: center;
+            color: #fff; font-size: 2rem; transition: .35s;
+        }
+        .modal-social a:hover { transform: translateY(-.5rem) scale(1.08); box-shadow: 0 .8rem 2rem rgba(0,0,0,.4); }
+        .s-fb { background: #1877f2; }
+        .s-in { background: #0a66c2; }
+        .s-mail { background: linear-gradient(135deg, var(--main), #7c5cff); }
 
         /* ---------- Responsive ---------- */
         @media (max-width: 991px) {
@@ -512,9 +579,32 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &copy; 2026 | All Rights Reserved. Designed by <span style="color: var(--main); font-weight: 600;">Foysal</span></p>
+            <p>Copyright &copy; 2026 | All Rights Reserved. Designed by <button type="button" class="designer-link" id="designerBtn" aria-haspopup="dialog">Foysal</button></p>
         </div>
     </footer>
+
+    <!-- Designer popup -->
+    <div class="modal" id="designerModal" role="dialog" aria-modal="true" aria-labelledby="designerName">
+        <div class="modal-card">
+            <button type="button" class="modal-close" aria-label="Close"><i class="fas fa-xmark"></i></button>
+            <div class="modal-photo">
+                <img src="images/design.png" alt="Mohammad Foysal"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="initials">MF</div>
+            </div>
+            <div class="modal-body">
+                <h3 id="designerName">Mohammad Foysal</h3>
+                <div class="modal-role">ICT Professional · IT Support Specialist</div>
+                <p>As a Computer Engineering undergraduate student, I focus on hardware systems and enterprise networking. I enjoy the practical, problem-solving aspects of technology, particularly in designing secure network architectures and diagnosing hardware bottlenecks.</p>
+                <h5>Connect with me</h5>
+                <div class="modal-social">
+                    <a class="s-fb" href="https://facebook.com/mohammad.foysal.2014" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a class="s-in" href="https://linkedin.com/in/mohammad-foysal-cse" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="s-mail" href="mailto:foysal.cse2016@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         /* Mobile menu */
@@ -567,6 +657,26 @@
             let n = 0;
             const step = () => { n++; el.textContent = n + suffix; if (n < target) setTimeout(step, 160); };
             setTimeout(step, 700);
+        });
+
+        /* Designer popup */
+        const modal = document.getElementById('designerModal');
+        const openBtn = document.getElementById('designerBtn');
+        const closeModal = () => {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+            openBtn.focus();
+        };
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            modal.querySelector('.modal-close').focus();
+        });
+        modal.addEventListener('click', e => {
+            if (e.target === modal || e.target.closest('.modal-close')) closeModal();
+        });
+        addEventListener('keydown', e => {
+            if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
         });
 
         /* Typing effect */
