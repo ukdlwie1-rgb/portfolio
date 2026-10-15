@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Foysal | IT Infrastructure &amp; End-User Support Specialist</title>
+    <title>Mohammad Foysal | IT Infrastructure &amp; Network Support Specialist</title>
     <link rel="icon" type="image/x-icon" href="images/logo.png">
 
     <!-- SEO -->
@@ -18,7 +18,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Mohammad Foysal">
     <meta property="og:url" content="https://foysal.sites.bd/">
-    <meta property="og:title" content="Mohammad Foysal | IT Infrastructure &amp; End-User Support Specialist">
+    <meta property="og:title" content="Mohammad Foysal | IT Infrastructure &amp; Network Support Specialist">
     <meta property="og:description" content="ICT professional specialising in IT infrastructure, networking and end-user support. MikroTik, Active Directory, Windows Server, UniFi and SAP/ERP.">
     <meta property="og:image" content="https://foysal.sites.bd/images/photo.jpg">
     <meta property="og:image:alt" content="Mohammad Foysal">
@@ -26,7 +26,7 @@
 
     <!-- Twitter / X card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mohammad Foysal | IT Infrastructure &amp; End-User Support Specialist">
+    <meta name="twitter:title" content="Mohammad Foysal | IT Infrastructure &amp; Network Support Specialist">
     <meta name="twitter:description" content="ICT professional specialising in IT infrastructure, networking and end-user support.">
     <meta name="twitter:image" content="https://foysal.sites.bd/images/photo.jpg">
 
@@ -320,7 +320,7 @@
         h1, h2, h3, .logo, .stat b, .heading { font-family: var(--font-head); letter-spacing: -.02em; }
         .home-content h1 { letter-spacing: -.035em; }
         .home-content p, .about-content > p, .skill-card p, .about-list li, .contact-card p, .contact-card a { line-height: 1.85; }
-        .navbar a { font-weight: 500; letter-spacing: .01em; }
+        .navbar a { font-weight: 500; letter-spacing: .01em; font-style: italic; }
         .btn { font-family: var(--font-head); font-weight: 600; letter-spacing: .02em; font-size: 1.5rem; }
         .skill-card h3, .contact-card h3 { font-weight: 600; letter-spacing: -.01em; }
         .skill-card h4 { font-weight: 600; }
@@ -332,7 +332,7 @@
 
         /* ---------- Designer link + popup ---------- */
         .designer-link {
-            background: none; color: var(--main); font: inherit; font-weight: 600; cursor: pointer;
+            background: none; color: var(--main); font: inherit; font-weight: 700; font-style: italic; cursor: pointer;
             border-bottom: .15rem dashed var(--main); padding: 0 .1rem; transition: .3s;
         }
         .designer-link:hover { color: #fff; border-bottom-style: solid; text-shadow: 0 0 1rem var(--main-glow); }
@@ -377,12 +377,35 @@
         .modal-social a:hover { transform: translateY(-.5rem) scale(1.08); box-shadow: 0 .8rem 2rem rgba(0,0,0,.4); }
         .s-fb { background: #1877f2; }
         .s-in { background: #0a66c2; }
-        .s-mail { background: linear-gradient(135deg, var(--main), #7c5cff); }
+        .s-wa { background: #25d366; }
+
+        /* ---------- Services ---------- */
+        .services { min-height: auto; padding-bottom: 6rem; }
+        .service-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 5rem; align-items: start;
+            max-width: 110rem; margin: 0 auto; list-style: none;
+        }
+        .service-item {
+            position: relative; display: block; padding: 1.4rem 0 1.4rem 3rem; transition: .3s;
+        }
+        .service-item::before {
+            content: ""; position: absolute; left: .4rem; top: 2.2rem; width: .9rem; height: .9rem; border-radius: 50%;
+            background: var(--main); box-shadow: 0 0 .9rem var(--main-glow); transition: .3s;
+        }
+        .service-item .ico { display: none; }
+        .service-item:hover { transform: translateX(.6rem); }
+        .service-item:hover::before { transform: scale(1.5); }
+        .service-item h3 { font-size: 1.7rem; font-weight: 600; margin-bottom: .3rem; letter-spacing: -.01em; }
+        .service-item p { font-size: 1.45rem; line-height: 1.6; color: var(--muted); }
+        @media (max-width: 768px) {
+            .service-grid { grid-template-columns: 1fr; }
+        }
 
         /* ---------- Responsive ---------- */
         @media (max-width: 991px) {
             html { font-size: 55%; }
             .header, .header.sticky { padding: 2rem 4%; }
+            .navbar a { font-size: 2.6rem; margin-left: 2.4rem; }
             section { padding: 10rem 4% 4rem; }
         }
         @media (max-width: 768px) {
@@ -393,7 +416,7 @@
                 display: none;
             }
             .navbar.active { display: block; }
-            .navbar a { display: block; font-size: 2rem; margin: 3rem 0; }
+            .navbar a { display: block; font-size: 3rem; margin: 2.4rem 0; }
             .navbar a::after { display: none; }
             .home { flex-direction: column-reverse; text-align: center; padding-top: 12rem; }
             .home-content h1 { font-size: 3.8rem; }
@@ -442,6 +465,7 @@
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
+            <a href="#services">Services</a>
             <a href="#skills">Skills</a>
             <a href="#experience">Experience</a>
             <a href="#education">Education</a>
@@ -459,7 +483,7 @@
             <p>Dedicated to maintaining seamless IT infrastructure, network operations, and providing prompt technical support. I specialize in troubleshooting hardware, software, and networking challenges to keep system operations running smoothly.</p>
 
             <div class="social-media">
-				<a href="https://github.com/your-username" target="_blank" rel="noopener" aria-label="Github"><i class="fab fa-github"></i></a>
+				<a href="https://wa.me/8801324000821" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 <a href="https://linkedin.com/in/mohammad-foysal-cse" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://facebook.com/mohammad.foysal.2014" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             </div>
@@ -504,6 +528,142 @@
 		</div>
     </section>
 
+    <!-- Services -->
+    <section class="services" id="services">
+        <h2 class="heading reveal">What <span>I Do</span></h2>
+        <div class="service-grid">
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-laptop"></i></div>
+                <div>
+                    <h3>Hardware &amp; Software Support</h3>
+                    <p>Laptop/Desktop, Windows, Printer, Scanner and Software Troubleshooting.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-users-gear"></i></div>
+                <div>
+                    <h3>Active Directory Users &amp; Microsoft 365</h3>
+                    <p>Active Directory Users, Microsoft 365 Support, Email/Outlook Configuration and Troubleshooting.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-network-wired"></i></div>
+                <div>
+                    <h3>Network Support</h3>
+                    <p>LAN/WAN, Wi-Fi, Router, Switch and VPN Support.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-folder-tree"></i></div>
+                <div>
+                    <h3>File Server &amp; Permissions</h3>
+                    <p>Shared Folder, File Server and Permission Management.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-shield-halved"></i></div>
+                <div>
+                    <h3>Security &amp; Backup</h3>
+                    <p>Antivirus, Endpoint Security and Data Backup.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-database"></i></div>
+                <div>
+                    <h3>Business Applications</h3>
+                    <p>SAP/ERP and other Business Application Support.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-user-plus"></i></div>
+                <div>
+                    <h3>Employee Onboarding</h3>
+                    <p>Setting up New Employee Workstations, Email Accounts, and System Access Permissions.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-video"></i></div>
+                <div>
+                    <h3>CCTV &amp; Meeting Rooms</h3>
+                    <p>IP Camera / NVR Setup, Attendance Machine, Meeting Room and Video Conference System Support.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-boxes-stacked"></i></div>
+                <div>
+                    <h3>IT Asset Inventory Management</h3>
+                    <p>IT Asset Tracking, Documenting the assigned user, physical location, Retirement & Disposal, Safely wiping data.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-handshake"></i></div>
+                <div>
+                    <h3>Vendor Coordination</h3>
+                    <p>ISP, Software Vendor, Hardware Vendor Communications and Coordination.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-screwdriver-wrench"></i></div>
+                <div>
+                    <h3>IT Equipment Warranty &amp; Repair</h3>
+                    <p>Device Warranty Claims, Hardware Repairs, and Technical Service Follow-ups.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-arrows-rotate"></i></div>
+                <div>
+                    <h3>OS, Driver &amp; Patch Updates</h3>
+                    <p>Installing and updating Operating Systems, Drivers, Security Patches, and Antivirus Definitions.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-chart-line"></i></div>
+                <div>
+                    <h3>System &amp; Network Monitoring</h3>
+                    <p>Continuous monitoring of IT Infrastructure and Network Connectivity to ensure uptime and smooth operations.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-toolbox"></i></div>
+                <div>
+                    <h3>Preventive Maintenance</h3>
+                    <p>Preventive maintenance and troubleshooting of IT equipment and infrastructure.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-ticket"></i></div>
+                <div>
+                    <h3>Incident &amp; Service Requests (ITSM)</h3>
+                    <p>Providing timely end-user support and technical solutions for incidents and service requests.</p>
+                </div>
+            </div>
+
+            <div class="service-item reveal">
+                <div class="ico"><i class="fas fa-scale-balanced"></i></div>
+                <div>
+                    <h3>Policy Compliance &amp; Availability</h3>
+                    <p>Ensure IT security, system availability and compliance with company policies and procedures.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Skills -->
     <section class="skills" id="skills">
         <h2 class="heading reveal">My <span>Skills</span></h2>
@@ -517,19 +677,19 @@
             <div class="skill-card reveal">
                 <i class="fas fa-network-wired"></i>
                 <h3>Network Support</h3>
-                <p>MikroTik Setup, Bandwidth Control, UniFi, Meraki APs, IP Cameras &amp; Attendance Systems.</p>
+                <p>Basic MikroTik Setup, Bandwidth Control, UniFi, Meraki APs, IP Cameras &amp; Attendance Systems.</p>
                 <div class="chips"><span>MikroTik</span><span>UniFi</span><span>Meraki</span><span>ZKTeco</span></div>
             </div>
             <div class="skill-card reveal">
                 <i class="fas fa-server"></i>
                 <h3>OS &amp; Systems</h3>
-                <p>Windows Server, Active Directory, Security Patch Updates &amp; System Troubleshooting.</p>
-                <div class="chips"><span>Windows Server</span><span>Active Directory</span><span>Patching</span></div>
+                <p>Windows, macOS &amp; Linux OS, Windows Server, Security Patch Updates &amp; System Troubleshooting.</p>
+                <div class="chips"><span>Windows OS</span><span>macOS</span><span>Linux OS</span><span>Windows Server</span><span>Patching</span></div>
             </div>
             <div class="skill-card reveal">
                 <i class="fas fa-cloud"></i>
                 <h3>Cloud &amp; Management</h3>
-                <p>Microsoft 365, DNS Management, Domain Hosting, SAP/ERP &amp; ManageEngine ITSM Ticketing.</p>
+                <p>Microsoft 365, DNS Management, Domain & Hosting, SAP/ERP &amp; ManageEngine ITSM Ticketing.</p>
                 <div class="chips"><span>Microsoft 365</span><span>SAP/ERP</span><span>ManageEngine</span><span>DNS</span></div>
             </div>
         </div>
@@ -545,7 +705,7 @@
                 <h4>RAK Ceramics (Bangladesh) Limited</h4>
                 <p class="meta">Sep 26, 2024 - Present (2+ yrs) | Sreepur, Gazipur</p>
                 <ul>
-                    <li>Managing Active Directory User's, Windows Server security patches, and Microsoft 365.</li>
+                    <li>Managing Active Directory Users, Windows Server security patches, and Microsoft 365.</li>
                     <li>Handling MikroTik, UniFi, Meraki APs, ZKTeco attendance, and IP Camera setup.</li>
                     <li>Providing SAP/ERP support, ITSM ManageEngine ticketing, and IT asset inventory tracking.</li>
                 </ul>
@@ -556,7 +716,7 @@
                 <h4>AB Apparels Ltd. (AB Group)</h4>
                 <p class="meta">Jun 01, 2023 - Sep 26, 2024 (1.3 yrs) | Savar, Dhaka</p>
                 <ul>
-                    <li>Configured MikroTik routers, bandwidth allocation, network devices, and CCTV/UniFi systems.</li>
+                    <li>Basic configure MikroTik routers, bandwidth allocation, network devices, and CCTV/UniFi systems.</li>
                     <li>Maintained hardware repair, operating system deployments, ERP support, and inventory logs.</li>
                     <li>Provided end-user technical support for software, office suites, and printers.</li>
                 </ul>
@@ -659,13 +819,13 @@
             </div>
             <div class="modal-body">
                 <h3 id="designerName">Mohammad Foysal</h3>
-                <div class="modal-role">ICT Professional · IT Support Specialist</div>
+                <div class="modal-role">ICT Professional | End-User IT Support</div>
                 <p>As a Computer Engineering undergraduate student, I focus on hardware systems and enterprise networking. I enjoy the practical, problem-solving aspects of technology, particularly in designing secure network architectures and diagnosing hardware bottlenecks.</p>
                 <h5>Connect with me</h5>
                 <div class="modal-social">
                     <a class="s-fb" href="https://facebook.com/mohammad.foysal.2014" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a class="s-in" href="https://linkedin.com/in/mohammad-foysal-cse" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="s-mail" href="mailto:foysal.cse2016@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a class="s-wa" href="https://wa.me/8801324000821" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -746,7 +906,7 @@
 
         /* Typing effect */
         (function () {
-            const phrases = ['IT Support Specialist', 'IT Professional', 'End-User Support Specialist'];
+            const phrases = ['IT Support Specialist', 'IT Professional', 'Network and Hardware Support'];
             const el = document.querySelector('.multiple-text');
             let p = 0, i = 0, del = false;
             (function tick() {
