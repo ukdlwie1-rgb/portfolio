@@ -9,7 +9,7 @@ I am a Computer Engineering undergraduate student passionate about **hardware sy
 * **Executive — IT** | RAK Ceramics (Bangladesh) Limited *(Sep 2024 – Present)*
 * **Executive — IT** | AB Apparels Ltd. *(Jun 2023 – Sep 2024)*
 * **Officer — IT** | Utah Knitting & Dyeing Ltd. *(Oct 2021 – Jun 2023)*
-* **Asst. Engineer ** | FastNet ISP *(Aug 2020 – Sep 2021)*
+* **Asst. Engineer** | FastNet ISP *(Aug 2020 – Sep 2021)*
 
 ## 🚀 Highlights
 
